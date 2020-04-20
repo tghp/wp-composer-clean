@@ -1,0 +1,15 @@
+{
+    "name": "tghp/wp-composer-clean",
+    "type": "composer-plugin",
+    "require": {
+        "composer-plugin-api": "^1.1"
+    },
+    "extra": {
+        "class": "TGHP\\WpComposerClean\\CleanPlugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "TGHP\\WpComposerClean\\": "src/"
+        }
+    }
+}
