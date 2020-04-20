@@ -111,7 +111,7 @@ class ExtraPackage
      */
     protected function mergeRequires($type, RootPackageInterface $rootPackage)
     {
-        $requires = $root->getRequires();
+        $requires = $rootPackage->getRequires();
 
         // Gather package names used for require
         $rootPackageName = $this->composer->getPackage()->getName();

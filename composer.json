@@ -1,6 +1,7 @@
 {
     "name": "tghp/wp-composer-clean",
     "type": "composer-plugin",
+    "version": "1.0.0",
     "require": {
         "composer-plugin-api": "^1.1"
     },

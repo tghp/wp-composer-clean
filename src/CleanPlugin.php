@@ -67,14 +67,14 @@ class CleanPlugin implements PluginInterface, EventSubscriberInterface
      */
     protected function merge()
     {
-        $root = $this->composer->getPackage();
+        $rootPackage = $this->composer->getPackage();
         
         foreach(['plugins', 'themes'] as $srcType) {
             $srcComposerFiles = glob("./src/{$srcType}/*/composer.json");
 
             foreach($srcComposerFiles as $composerFile) {
                 $package = new ExtraPackage($composerFile, $this->composer);
-                $package->mergeInto($root);
+                $package->mergeInto($rootPackage);
             }
         }
     }
