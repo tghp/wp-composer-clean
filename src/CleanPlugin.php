@@ -34,6 +34,20 @@ class CleanPlugin implements PluginInterface, EventSubscriberInterface
     {
         $this->composer = $composer;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function deactivate(Composer $composer, IOInterface $io)
+    {
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function uninstall(Composer $composer, IOInterface $io)
+    {
+    }
     
     /**
      * {@inheritdoc}

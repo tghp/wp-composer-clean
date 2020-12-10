@@ -10,7 +10,7 @@ use Composer\Package\Loader\ArrayLoader;
 use Composer\Package\RootAliasPackage;
 use Composer\Package\RootPackageInterface;
 use Composer\Package\Version\VersionParser;
-use Composer\Semver\Constraint\EmptyConstraint;
+use Composer\Semver\Constraint\MatchAllConstraint;
 
 class ExtraPackage
 {
@@ -118,7 +118,7 @@ class ExtraPackage
         $packageName = $this->package->getName();
 
         // Create a constraint used in the requier link
-        $devConstraint = new EmptyConstraint();
+        $devConstraint = new MatchAllConstraint();
         $devConstraint->setPrettyString('@dev');
 
         // Create a link
