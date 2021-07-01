@@ -84,11 +84,18 @@ class CleanPlugin implements PluginInterface, EventSubscriberInterface
         $rootPackage = $this->composer->getPackage();
         
         foreach(['plugins', 'themes'] as $srcType) {
-            $srcComposerFiles = glob("./src/{$srcType}/*/composer.json");
+            $srcs = [
+              "./src/{$srcType}/*/composer.json",
+              "./src/*/{$srcType}/*/composer.json"
+            ];
 
-            foreach($srcComposerFiles as $composerFile) {
-                $package = new ExtraPackage($composerFile, $this->composer);
-                $package->mergeInto($rootPackage);
+            foreach($srcs as $src) {
+                $srcComposerFiles = glob($src);
+
+                foreach($srcComposerFiles as $composerFile) {
+                    $package = new ExtraPackage($composerFile, $this->composer);
+                    $package->mergeInto($rootPackage);
+                }
             }
         }
     }
